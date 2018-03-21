@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.blankj.utilcode.util.FragmentUtils;
 import com.example.weijunhao.facec.base.BaseActivity;
+import com.example.weijunhao.facec.chart.ChatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -39,7 +40,8 @@ public class MainActivity extends BaseActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 //        updateUI(currentUser);
-        MainActivityPermissionsDispatcher.showWithPermissionCheck(this);
+//        MainActivityPermissionsDispatcher.showWithPermissionCheck(this);
+        ChatActivity.start(mContext);
     }
 
     private void updateUI(FirebaseUser currentUser) {

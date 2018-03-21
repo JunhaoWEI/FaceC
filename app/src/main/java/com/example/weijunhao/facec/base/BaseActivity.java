@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.weijunhao.facec.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.ButterKnife;
 
@@ -17,6 +18,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
     public Context mContext = this;
+    public FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getContentLayoutId());
         ButterKnife.bind(this);
         setupToolbar();
+        mAuth = FirebaseAuth.getInstance();
         onCreating();
     }
 
